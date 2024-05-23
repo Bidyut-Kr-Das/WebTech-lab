@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body>
+    <input type="number" name="age" id="ageInput" placeholder="Enter age" />
+    <input type="button" onclick="checkAge()" value="Check" />
+  </body>
+  <script>
+    function checkAge() {
+      var age = parseInt(document.getElementById("ageInput").value);
+
+      if (age >= 18) {
+        alert("Hello! Welcome to the site.");
+      } else {
+        alert("Sorry, you are not authorized to enter.");
+      }
+    }
+  </script>
+</html>

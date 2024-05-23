@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment Box</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .comment-box {
+        margin-bottom: 10px;
+      }
+      .comment-area {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+      .submit-btn {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .comments-container {
+        margin-top: 20px;
+      }
+      .comment {
+        background-color: #f2f2f2;
+        margin-bottom: 5px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="comment-box">
+      <textarea
+        id="comment-input"
+        class="comment-area"
+        rows="4"
+        placeholder="Enter your comment here..."
+      ></textarea>
+      <button onclick="postComment()" class="submit-btn">Post Comment</button>
+    </div>
+
+    <div id="comments-container" class="comments-container">
+      <!-- Comments will appear here -->
+    </div>
+
+    <script>
+      function postComment() {
+        var input = document.getElementById("comment-input");
+        var comment = input.value.trim();
+        if (comment) {
+          var commentsContainer = document.getElementById("comments-container");
+          var newComment = document.createElement("div");
+          newComment.classList.add("comment");
+          newComment.textContent = comment;
+          commentsContainer.appendChild(newComment);
+          input.value = ""; // Clear the input field
+        }
+      }
+    </script>
+  </body>
+</html>
